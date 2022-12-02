@@ -9,17 +9,18 @@ import UIKit
 
 class MemoListVC: UITableViewController {
 
-//    override func viewWillAppear(_ animated: Bool) {
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -33,7 +34,10 @@ class MemoListVC: UITableViewController {
         let row = self.appDelegate.memolist[indexPath.row]
         let cellId = row.image == nil ? "memoCell" : "memoCellWithImage"
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! MemoCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as? MemoCell else {
+            return UITableViewCell()
+        }
+      
         
         cell.subject?.text = row.title
         cell.contents?.text = row.contents
@@ -48,6 +52,15 @@ class MemoListVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let row = self.appDelegate.memolist[indexPath.row]
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else {
+            return
+        }
+        
+        vc.param = row
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

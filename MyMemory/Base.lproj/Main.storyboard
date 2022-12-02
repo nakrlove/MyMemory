@@ -22,7 +22,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" focusStyle="custom" rowHeight="80" id="Vv7-7m-k0g" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" focusStyle="custom" rowHeight="80" id="Vv7-7m-k0g" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vv7-7m-k0g" id="pkl-QP-DKT">
@@ -75,7 +75,7 @@
                                     <outlet property="subject" destination="9jB-v6-ifk" id="z6B-1x-JnZ"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCellWithImage" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" focusStyle="custom" rowHeight="80" id="Dem-3q-nrf" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCellWithImage" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" focusStyle="custom" rowHeight="80" id="Dem-3q-nrf" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dem-3q-nrf" id="oX2-oQ-Trt">
@@ -159,7 +159,7 @@
         <!--상세 화면-->
         <scene sceneID="1Jt-mo-Tiu">
             <objects>
-                <viewController title="상세 화면" id="zUJ-77-6LT" customClass="MemoReadVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" title="상세 화면" id="zUJ-77-6LT" customClass="MemoReadVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xJC-Ke-kgP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +201,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="arJ-je-vLU"/>
+                    <connections>
+                        <outlet property="contents" destination="LQT-VK-Snw" id="Dgl-Mz-X9F"/>
+                        <outlet property="img" destination="J0P-Bq-Lqt" id="AMi-WS-W4k"/>
+                        <outlet property="subject" destination="Zwa-CO-qlZ" id="DWp-zF-uDt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nmc-6W-LFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

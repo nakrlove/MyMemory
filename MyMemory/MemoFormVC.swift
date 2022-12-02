@@ -16,6 +16,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate , UINavigati
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.contents.delegate = self
         // Do any additional setup after loading the view.
     }
 
