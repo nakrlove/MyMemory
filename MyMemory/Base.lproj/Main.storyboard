@@ -19,7 +19,17 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="tDH-UV-EQB">
                             <rect key="frame" x="0.0" y="216" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp9-sB-gzF" customClass="CSLogButton" customModule="MyMemory" customModuleProvider="target">
+                                    <rect key="frame" x="184" y="7" width="46" height="30"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="cp9-sB-gzF" firstAttribute="centerX" secondItem="tDH-UV-EQB" secondAttribute="centerX" id="XJX-NA-jgn"/>
+                                <constraint firstItem="cp9-sB-gzF" firstAttribute="centerY" secondItem="tDH-UV-EQB" secondAttribute="centerY" id="iC6-5D-Ha3"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" focusStyle="custom" rowHeight="80" id="Vv7-7m-k0g" customClass="MemoCell" customModule="MyMemory" customModuleProvider="target">
